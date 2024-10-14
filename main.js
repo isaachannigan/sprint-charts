@@ -57,8 +57,13 @@ while((1180 - countAdjustedDays * adjustedAveragePointsPerDay) > 0) {
   );
   countAdjustedDays++;
 }
-
+let allowance = 0
 const daysLeft = getDaysBetween("2024-10-13", "2024-11-10");
+for (const day of daysLeft) { 
+	allowance += adjustedAveragePointsPerDay
+}
+console.log(allowance)
+
 
 const idealBurnRate = totalPts / days.length;
 const idealDataPoints = [totalPts];
