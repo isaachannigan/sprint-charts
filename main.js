@@ -31,7 +31,7 @@ for (const day of days) {
     }
   }
 
-  if (new Date(day) > new Date("2024-10-21")) {
+  if (new Date(day) > new Date("2024-10-28")) {
     daySum = 0;
   }
   if (daySum > 0) {
@@ -39,17 +39,17 @@ for (const day of days) {
   }
 }
 
-const elapsedDays = getDaysBetween("2024-09-07", "2024-10-21");
-const ptsCompleted = totalPts - 890;
+const elapsedDays = getDaysBetween("2024-09-07", "2024-10-28");
+const ptsCompleted = totalPts - 530;
 const averagePointsPerDay = ptsCompleted / elapsedDays.length;
 console.log("average pts per day: ", averagePointsPerDay)
 
-const averagedBurnRate = [1850	];
+const averagedBurnRate = [1850];
 for (let i = 1; i < days.length; i++) {
   averagedBurnRate[i] = averagedBurnRate[i - 1] - averagePointsPerDay;
 }
 
-const daysOfAdjusted = getDaysBetween("2024-09-26", "2024-10-21");
+const daysOfAdjusted = getDaysBetween("2024-09-26", "2024-10-28");
 const adjustedAveragePointsPerDay = ptsCompleted / daysOfAdjusted.length;
 console.log("adjustedAveragePointsPerDay: ", adjustedAveragePointsPerDay)
 const adjustedAverageBurnRate = [1810	];
@@ -64,7 +64,7 @@ while (1810	 - countAdjustedDays * adjustedAveragePointsPerDay > 0) {
   countAdjustedDays++;
 }
 let allowance = 0;
-const daysLeft = getDaysBetween("2024-10-20", "2024-11-10");
+const daysLeft = getDaysBetween("2024-10-28", "2024-11-10");
 for (const day of daysLeft) {
   allowance += adjustedAveragePointsPerDay;
 }
@@ -113,10 +113,10 @@ new Chart(canv, {
         data: adjustedAverageBurnRate,
         type: "line",
       },
-      {
-        label: "Luxury points",
-        data: luxes,
-      }
+      // {
+      //   label: "Luxury points",
+      //   data: luxes,
+      // }
       
     ],
   },
